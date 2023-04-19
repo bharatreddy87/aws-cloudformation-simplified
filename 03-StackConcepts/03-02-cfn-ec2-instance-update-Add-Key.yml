@@ -4,5 +4,5 @@ Resources:
     Type: 'AWS::EC2::Instance'
     Properties: 
       ImageId: ami-06e46074ae430fba6
-      InstanceType: t2.micro
+      InstanceType: t3.medium
       KeyName: cfn-key-1
