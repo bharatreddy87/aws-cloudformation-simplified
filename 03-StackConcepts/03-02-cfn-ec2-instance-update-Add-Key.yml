@@ -5,4 +5,18 @@ Resources:
     Properties: 
       ImageId: ami-06e46074ae430fba6
       InstanceType: t3.medium
-      KeyName: cfn-key-1
+      KeyName: cfn-key-1  
+      SecurityGroups:
+        - default
+        - !Ref SecurityGroups
+
+  SecurityGroups:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: secutity group for SSH
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+
